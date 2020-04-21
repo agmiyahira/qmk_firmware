@@ -1,12 +1,12 @@
 #include QMK_KEYBOARD_H
 
 #define _COLEMAK 0
-#define _MAC_COLEMAK 0
-#define _WIN_SHRTCT 1
-#define _MAC_SHRTCT 1
-#define _LOWER 2
-#define _RAISE 3
-#define _ADJUST 4
+#define _MAC_COLEMAK 1
+#define _WIN_SHRTCT 2
+#define _MAC_SHRTCT 3
+#define _LOWER 4
+#define _RAISE 5
+#define _ADJUST 6
 
 enum custom_keycodes {
     COLEMAK = SAFE_RANGE,
