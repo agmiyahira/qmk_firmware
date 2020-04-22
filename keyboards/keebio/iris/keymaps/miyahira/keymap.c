@@ -47,32 +47,26 @@ enum {
     TILDE_QUIT = 1,
 };
 
-void dance_tilde_quit_finished (qk_tap_dance_state_t *state, void *user_data) {
+void dance_tilde_esc_finished (qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         register_code (KC_GRV);
     } else if (state->count == 2) {
         register_code (KC_ESC);
-    } else if (state->count == 3) {
-        register_code (KC_LALT);
-        register_code (KC_F4);
     }
 }
 
-void dance_tilde_quit_reset (qk_tap_dance_state_t *state, void *user_data) {
+void dance_tilde_esc_reset (qk_tap_dance_state_t *state, void *user_data) {
     if (state->count == 1) {
         unregister_code (KC_GRV);
     } else if (state->count == 2){
         unregister_code (KC_ESC);
-    } else if (state->count == 3) {
-        unregister_code (KC_LALT);
-        unregister_code (KC_F4);
     }
 }
 
 //Tap Dance Definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
     [LSFT_CAPS]  = ACTION_TAP_DANCE_DOUBLE(KC_LSHIFT, KC_CAPSLOCK), // Tap once for shift, twice for caps lock
-    [TILDE_QUIT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_tilde_quit_finished, dance_tilde_quit_reset) // Tap once for escape, twice for alt+F4
+    [TILDE_QUIT] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_tilde_esc_finished, dance_tilde_esc_reset) // Tap once for escape, twice for alt+F4
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
