@@ -44,15 +44,15 @@ enum custom_keycodes {
 #define M_SEARCH LOPT(KC_SPACE)
 #define M_FOLLOW LCMD(LALT(KC_B)) // IntelliJ - go to implementation
 #define M_CREATE LALT(KC_ENTER) // IntelliJ - creates code
-#define M_SPEC_1 LALT(LCMD(KC_F)) // Spectacle - bottom left
-#define M_SPEC_2 LALT(LCMD(KC_F)) // Spectacle - bottom half
-#define M_SPEC_3 LALT(LCMD(KC_F)) // Spectacle - bottom right
-#define M_SPEC_4 LALT(LCMD(KC_F)) // Spectacle - left half
+#define M_SPEC_1 LCTL(LSFT(LCMD(KC_LEFT))) // Spectacle - bottom left
+#define M_SPEC_2 LOPT(LCMD(KC_DOWN)) // Spectacle - bottom half
+#define M_SPEC_3 LCTL(LSFT(LCMD(KC_RIGHT))) // Spectacle - bottom right
+#define M_SPEC_4 LOPT(LCMD(KC_LEFT)) // Spectacle - left half
 #define M_SPEC_5 LALT(LCMD(KC_F)) // Spectacle - full screen
-#define M_SPEC_6 LALT(LCMD(KC_F)) // Spectacle - right half
-#define M_SPEC_7 LALT(LCMD(KC_F)) // Spectacle - top right
-#define M_SPEC_8 LALT(LCMD(KC_F))// Spectacle - top half
-#define M_SPEC_9 LALT(LCMD(KC_F))// Spectacle - top right s
+#define M_SPEC_6 LOPT(LCMD(KC_RIGHT)) // Spectacle - right half
+#define M_SPEC_7 LCTL(LCMD(KC_LEFT)) // Spectacle - top left
+#define M_SPEC_8 LOPT(LCMD(KC_UP)) // Spectacle - top half
+#define M_SPEC_9 LCTL(LCMD(KC_RIGHT)) // Spectacle - top right
 
 
 //Tap Dance Declarations
@@ -173,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
         _______, _______, _______, _______, M_QUIT, _______,                            _______, _______, _______, _______, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-      M_NXT_WIN, _______, _______, M_FIND, _______, _______,                            _______, M_SPEC_6,M_SPEC_7,M_SPEC_8, _______, _______,
+      M_NXT_WIN, _______, _______, M_FIND, _______, _______,                            _______, M_SPEC_7,M_SPEC_8,M_SPEC_9, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
         _______,M_SEL_ALL,_______, M_SAVE, M_REOPEN, _______,                            _______,M_SPEC_4,M_SPEC_5,M_SPEC_6, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
