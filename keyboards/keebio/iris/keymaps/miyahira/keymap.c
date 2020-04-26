@@ -95,7 +95,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
     TD(LSFT_CAPS),KC_Z,   KC_X,     KC_C,    KC_V,    KC_B,   KC_GRV,          KC_MPLY,   KC_K,    KC_M,  KC_COMM,  KC_DOT,  KC_SLSH, KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    WIN_SHRTCT, KC_SPACE, LOWER,                    RAISE,  KC_BSPC,  KC_ENT
+                                    WIN_SHRTCT, KC_SPACE, LOWER,                    RAISE, KC_SFTENT, KC_BSPC
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
         ),
 
