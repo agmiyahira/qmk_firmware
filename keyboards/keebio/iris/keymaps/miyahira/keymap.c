@@ -57,6 +57,51 @@ enum custom_keycodes {
 #define M_SPEC_8 LOPT(LCMD(KC_UP)) // Spectacle - top half
 #define M_SPEC_9 LCTL(LCMD(KC_RIGHT)) // Spectacle - top right
 
+enum combos {
+    PARENTHESES,
+    BRACKETS,
+    BRACES,
+};
+
+const uint16_t PROGMEM parentheses_combo[] = {KC_T, KC_N, COMBO_END};
+const uint16_t PROGMEM brackets_combo[]    = {KC_S, KC_E, COMBO_END};
+const uint16_t PROGMEM braces_combo[]      = {KC_R, KC_I, COMBO_END};
+
+combo_t key_combos[COMBO_COUNT] = {
+    [PARENTHESES] = COMBO_ACTION(parentheses_combo),
+    [BRACKETS]    = COMBO_ACTION(brackets_combo),
+    [BRACES]      = COMBO_ACTION(braces_combo),
+};
+
+void process_combo_event(uint8_t combo_index, bool pressed) {
+    switch(combo_index) {
+        case PARENTHESES:
+            if (pressed) {
+                register_code(KC_LSFT);
+                tap_code(KC_9);
+                tap_code(KC_0);
+                unregister_code(KC_LSFT);
+                tap_code(KC_LEFT);
+            }
+            break;
+        case BRACKETS:
+            if (pressed) {
+                register_code(KC_LSFT);
+                tap_code(KC_LBRC);
+                tap_code(KC_RBRC);
+                unregister_code(KC_LSFT);
+                tap_code(KC_LEFT);
+            }
+            break;
+        case BRACES:
+            if (pressed) {
+                tap_code(KC_LBRC);
+                tap_code(KC_RBRC);
+                tap_code(KC_LEFT);
+            }
+            break;
+    }
+}
 
 //Tap Dance Declarations
 enum {
@@ -285,9 +330,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
+        case PARENTHESES:
+            if (record->event.pressed) {
+                register_code(KC_LSFT);
+                register_code(KC_9);
+                unregister_code(KC_LSFT);
+                register_code(KC_SPACE);
+                register_code(KC_SPACE);
+                register_code(KC_LSFT);
+                register_code(KC_0);
+                unregister_code(KC_LSFT);
+                register_code(KC_LEFT);
+                register_code(KC_LEFT);
+            } else {
+            }
+            break;
     }
     return true;
 }
+
 
 
 void encoder_update_user(uint8_t index, bool clockwise) {

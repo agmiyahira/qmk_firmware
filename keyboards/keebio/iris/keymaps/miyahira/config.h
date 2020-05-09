@@ -76,6 +76,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RGBLIGHT_ANIMATIONS
 
 #define TAPPING_TERM 175
-
+#define COMBO_COUNT 3
 //#define NO_AUTO_SHIFT_SPECIAL
 //#define NO_AUTO_SHIFT_NUMERIC
