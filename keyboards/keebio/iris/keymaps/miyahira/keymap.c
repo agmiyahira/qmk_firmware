@@ -63,9 +63,9 @@ enum combos {
     BRACES,
 };
 
-const uint16_t PROGMEM parentheses_combo[] = {KC_T, KC_N, COMBO_END};
-const uint16_t PROGMEM brackets_combo[]    = {KC_S, KC_E, COMBO_END};
-const uint16_t PROGMEM braces_combo[]      = {KC_R, KC_I, COMBO_END};
+const uint16_t PROGMEM parentheses_combo[] = {KC_V, KC_M, COMBO_END};
+const uint16_t PROGMEM brackets_combo[]    = {KC_C, KC_COMM, COMBO_END};
+const uint16_t PROGMEM braces_combo[]      = {KC_X, KC_DOT, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     [PARENTHESES] = COMBO_ACTION(parentheses_combo),
