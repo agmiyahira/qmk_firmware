@@ -330,26 +330,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
-        case PARENTHESES:
-            if (record->event.pressed) {
-                register_code(KC_LSFT);
-                register_code(KC_9);
-                unregister_code(KC_LSFT);
-                register_code(KC_SPACE);
-                register_code(KC_SPACE);
-                register_code(KC_LSFT);
-                register_code(KC_0);
-                unregister_code(KC_LSFT);
-                register_code(KC_LEFT);
-                register_code(KC_LEFT);
-            } else {
-            }
-            break;
     }
     return true;
 }
-
-
 
 void encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
