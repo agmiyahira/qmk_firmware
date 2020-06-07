@@ -59,6 +59,8 @@ enum custom_keycodes {
 #define M_SPEC_8 LOPT(LCMD(KC_UP)) // Spectacle - top half
 #define M_SPEC_9 LCTL(LCMD(KC_RIGHT)) // Spectacle - top right
 
+//#define MEDIA_KEY_DELAY 10
+
 enum combos {
     PARENTHESES,
     BRACKETS,
@@ -300,7 +302,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
         _______,M_SEL_ALL,_______, M_SAVE, M_REOPEN, _______,                            _______,M_SPEC_4,M_SPEC_5,M_SPEC_6, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-        _______, M_UNDO,  M_CUT,   M_COPY, M_PASTE, M_FOLLOW, _______,          _______, _______,M_SPEC_1,M_SPEC_2,M_SPEC_3, _______, _______,
+        _______, M_UNDO,  M_CUT,   M_COPY, M_PASTE, M_FOLLOW, _______,          _______, _______,M_SPEC_1,M_SPEC_2,M_SPEC_3, M_COMMENT, _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                       _______, M_SEARCH, _______,                   _______, M_CREATE, _______
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
