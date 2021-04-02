@@ -41,10 +41,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QMK_LED B0
 #define QMK_SPEAKER C6
 
-#define ENCODERS_PAD_A { B2 }
-#define ENCODERS_PAD_B { B3 }
-#define ENCODERS_PAD_A_RIGHT { F7 }
-#define ENCODERS_PAD_B_RIGHT { F6 }
+//#define ENCODERS_PAD_A { B2 }
+//#define ENCODERS_PAD_B { B3 }
+//#define ENCODERS_PAD_A_RIGHT { F7 }
+//#define ENCODERS_PAD_B_RIGHT { F6 }
+//#define ENCODER_RESOLUTION 4
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
@@ -77,5 +78,3 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define TAPPING_TERM 175
 #define COMBO_COUNT 3
-//#define NO_AUTO_SHIFT_SPECIAL
-//#define NO_AUTO_SHIFT_NUMERIC
